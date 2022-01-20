@@ -29,6 +29,10 @@ input {
   outline: none;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .icon {
   cursor: move;
 }
@@ -52,6 +56,11 @@ main {
 .fas {
   display: flex;
   color: rgb(92, 91, 91);
+  cursor: pointer;
+}
+
+.list-text {
+  width: 100%;
 }
 
 .input {
