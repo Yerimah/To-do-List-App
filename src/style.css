@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.heading, 
+.add-list, 
+li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 150px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(170, 169, 169);
+}
+
+main {
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.remove {
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(170, 169, 169);
+}
