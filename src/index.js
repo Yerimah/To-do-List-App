@@ -18,37 +18,31 @@ const Todo = [
   },
 ];
 
-const listcontainer = document.querySelector('list');
+let listContent = `
+  <div class="heading">
+      <h2>Today's To Do</h2>
+      <i class="fas fa-sync"></i>
+  </div>
+  <div class="add-list">
+      <input class="add-input" type="text" placeholder="Add to your list">
+      <i class="fas fa-level-down-alt rotate"></i>
+  </div>
+`;
 
-function tasklist() {
-  Todo.forEach((e) => {
-    listcontainer.innerHTML = '';
-    listcontainer.innerHTML += `
-         <li id="task-${e.index}" dragdrop="true">
-            <div class="content">
-               <input type="checkbox" class="input" ${e.completed ? 'checked' : ''}/>
-               <input type="text" class="input" value='${e.description}' readonly/>
-            </div>
-            <div class="action">
-              <span class="material-icons drag"></span>
-              <span class="material-icons delete"></span>
-            </div>
+Todo.forEach((listItem) => {
+  listContent += `
+  <div class="row">
+      <div class="input">
+      <input type="checkbox" class="check">
+      <p class="list-text">${listItem.description}</p>
+      </div>
+      <div class="icon">
+      <i class="fas fa-ellipsis-v"></i>
+      </div>
+  </div>
+  
+`;
+});
 
-         </li>
-       `;
-  });
-}
-
-tasklist();
-
-// function component() {
-//     const element = document.createElement('div');
-
-//     // Lodash, now imported by this script
-//     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-//     element.classList.add('hello');
-
-//     return element;
-//   }
-
-//   document.body.appendChild(component());
+const listElement = document.querySelector('.list');
+listElement.innerHTML = listContent;
