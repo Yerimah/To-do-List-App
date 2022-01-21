@@ -33,8 +33,8 @@ input {
   display: none !important;
 }
 
-.icon {
-  cursor: move;
+.far {
+  cursor: pointer;
 }
 
 .row {
@@ -54,9 +54,13 @@ main {
 }
 
 .fas {
+  cursor: pointer;
+}
+
+.icon .fas {
   display: flex;
   color: rgb(92, 91, 91);
-  cursor: pointer;
+  cursor: move;
 }
 
 .list-text {

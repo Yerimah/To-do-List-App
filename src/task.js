@@ -23,4 +23,12 @@ export default class Tasks {
     this.list[task.index - 1] = task;
     localStorage.setItem('items', JSON.stringify(this.list));
   }
+
+  clearAll() {
+    this.list = this.list.filter((t) => !t.completed).map((t, i) => ({
+      ...t, index: i + 1,
+    }));
+
+    localStorage.setItem('items', JSON.stringify(this.list));
+  }
 }

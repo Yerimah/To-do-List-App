@@ -17,3 +17,10 @@ form.addEventListener('submit', (e) => {
 });
 
 showAllTodo(todos);
+
+const clear = document.querySelector('.remove');
+
+clear.addEventListener('click', () => {
+  todos.clearAll();
+  showAllTodo(todos);
+});
