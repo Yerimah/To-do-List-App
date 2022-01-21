@@ -47,4 +47,14 @@ export default function showAllTodo(tasks) {
       showAllTodo(tasks);
     });
   });
+
+  document.querySelectorAll('.check').forEach((box) => {
+    box.addEventListener('change', () => {
+      const { id } = box.parentNode.parentNode;
+      const currentTask = tasks.list.find((t) => t.index === +id);
+      currentTask.completed = box.checked; 
+      tasks.updateTodo(currentTask);
+    } )
+  })
+
 }

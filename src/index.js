@@ -1,6 +1,7 @@
 import './style.css';
 import Tasks from './task.js';
 import showAllTodo from './function.js';
+import { remove } from 'lodash';
 
 const todos = new Tasks();
 
@@ -17,3 +18,11 @@ form.addEventListener('submit', (e) => {
 });
 
 showAllTodo(todos);
+
+
+const clear = document.querySelector('.remove');
+
+clear.addEventListener('click', () => {
+  todos.clearAll();
+  showAllTodo(todos);
+})
