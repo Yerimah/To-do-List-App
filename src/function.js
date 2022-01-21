@@ -52,9 +52,8 @@ export default function showAllTodo(tasks) {
     box.addEventListener('change', () => {
       const { id } = box.parentNode.parentNode;
       const currentTask = tasks.list.find((t) => t.index === +id);
-      currentTask.completed = box.checked; 
+      currentTask.completed = box.checked;
       tasks.updateTodo(currentTask);
-    } )
-  })
-
+    });
+  });
 }
